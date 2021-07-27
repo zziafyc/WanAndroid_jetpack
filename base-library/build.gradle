@@ -1,0 +1,109 @@
+plugins {
+    id('com.android.library')
+    id('kotlin-android')
+    id('kotlin-parcelize')
+    id('kotlin-kapt')
+}
+
+android {
+    compileSdkVersion BuildVersion.compileSdkVersion
+
+    defaultConfig {
+        minSdkVersion BuildVersion.minSdkVersion
+        targetSdkVersion BuildVersion.targetSdkVersion
+        versionCode BuildVersion.versionCode
+        versionName BuildVersion.versionName
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        consumerProguardFiles "consumer-rules.pro"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
+    buildFeatures {
+        viewBinding true
+    }
+}
+
+dependencies {
+    api fileTree(dir: 'libs', include: ['*.jar'])
+    testImplementation('junit:junit:4.+')
+    androidTestImplementation('androidx.test.ext:junit:1.1.1')
+    androidTestImplementation('androidx.test.espresso:espresso-core:3.2.0')
+    /**
+     * Android库
+     */
+    api(Android.appcompat)
+    api Android.coreKtx
+    api(Android.constraintlayout)
+    api(Android.legacy)
+    api(Android.paging)
+    api(Android.viewpager2)
+    api(Android.multidex)
+    api(Android.material)
+    /**
+     * kotlin库
+     */
+    api(Kotlin.jdk8)
+    api(Kotlin.coroutines.core)
+    api(Kotlin.coroutines.android)
+
+    /**
+     * jetPack组件-navigation相关
+     */
+    api(Android.navigation.fragmentKtx)
+    api(Android.navigation.uiKtx)
+
+    /**
+     * jetPack组件-lifecycle相关(包括liveData和viewModel)
+     */
+    api(Android.lifecycle.extensions)
+    api(Android.lifecycle.liveDataKtx)
+    api(Android.lifecycle.viewModelKtx)
+
+    /**
+     * jetPack组件-Room相关
+     */
+    api(Android.room.roomRuntime)
+    api(Android.room.roomKtx)
+//    kapt(Android.room.roomCompiler)
+
+    /**
+     * 第三方库
+     */
+    api(ThirdParty.okhttp)
+    api(ThirdParty.rxjava)
+    api(ThirdParty.rxAndroid)
+    api(ThirdParty.cookieJar)
+    api(ThirdParty.baseQuickAdapter)
+    api(ThirdParty.eventBus)
+    api(ThirdParty.aviUi)
+    api(ThirdParty.banner)
+    api(ThirdParty.magic)
+    api(ThirdParty.easypermissions)
+    api(ThirdParty.labelsView)
+    api(ThirdParty.rxPermission)
+    api(ThirdParty.shadow)
+
+    api(ThirdParty.retrofit.retrofit)
+    api(ThirdParty.retrofit.scalars)
+    api(ThirdParty.retrofit.gson)
+
+    api(ThirdParty.glide.glide)
+    api(ThirdParty.glide.transformations)
+
+    api(ThirdParty.smart.smart)
+    api(ThirdParty.smart.head)
+
+}

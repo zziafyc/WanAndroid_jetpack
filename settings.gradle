@@ -1,2 +1,3 @@
+include ':base-library'
 include ':app'
 rootProject.name = "WanAndroid_jetpack"
