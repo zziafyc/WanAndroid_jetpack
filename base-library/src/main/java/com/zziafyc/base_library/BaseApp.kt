@@ -13,6 +13,8 @@ open class BaseApp : Application() {
 
     override fun onCreate() {
         super.onCreate()
+        baseApp = this
+
     }
 
     companion object {
@@ -21,4 +23,5 @@ open class BaseApp : Application() {
             return baseApp;
         }
     }
+
 }

@@ -2,6 +2,8 @@ package com.zziafyc.wanandroid_jetpack
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.zziafyc.base_library.BaseApp
+import com.zziafyc.base_library.base.BaseVmActivity
 
 /**
  *
@@ -10,10 +12,18 @@ import android.os.Bundle
  * @description
  */
 
-class MainActivity : AppCompatActivity() {
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+class MainActivity : BaseVmActivity() {
+    override fun getLayoutId(): Int {
+        return R.layout.activity_main
+    }
+
+    override fun initView() {
+    }
+
+    override fun initData() {
+    }
+
+    override fun initListener() {
     }
 
 }
