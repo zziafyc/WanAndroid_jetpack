@@ -13,7 +13,7 @@ import java.net.URL
 /**
  * Created by chenxz on 2018/4/21.
  */
-class NetWorkUtil {
+class NetWorkUtils {
     companion object {
 
         private const val TIMEOUT = 3000 // TIMEOUT

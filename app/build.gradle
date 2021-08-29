@@ -18,7 +18,7 @@ android {
         multiDexEnabled true
     }
     buildFeatures {
-        viewBinding true
+        dataBinding = true
     }
 
     buildTypes {
@@ -43,6 +43,5 @@ dependencies {
     androidTestImplementation('androidx.test.espresso:espresso-core:3.2.0')
     //引入library库
     implementation project(":base-library")
-
     kapt(Android.room.roomCompiler)
 }

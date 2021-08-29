@@ -5,8 +5,8 @@ import android.content.Context
 import android.content.Intent
 import com.zziafyc.base_library.constants.Constants
 import com.zziafyc.base_library.event.NetworkChangeEvent
-import com.zziafyc.base_library.utils.NetWorkUtil
-import com.zziafyc.base_library.utils.PreferenceUtil
+import com.zziafyc.base_library.utils.NetWorkUtils
+import com.zziafyc.base_library.utils.PreferenceUtils
 import org.greenrobot.eventbus.EventBus
 
 /**
@@ -16,9 +16,13 @@ import org.greenrobot.eventbus.EventBus
  * @description 网络判断
  */
 class NetworkChangeReceiver : BroadcastReceiver() {
-    private var hasNetwork: Boolean by PreferenceUtil(Constants.HAS_NETWORK_KEY, true)
+    private var hasNetwork: Boolean = PreferenceUtils.getBoolean(
+        Constants.HAS_NETWORK_KEY,
+        true
+    )
+
     override fun onReceive(context: Context, intent: Intent) {
-        val isConnected = NetWorkUtil.isNetworkConnected(context)
+        val isConnected = NetWorkUtils.isNetworkConnected(context)
         if (isConnected) {
             if (isConnected != hasNetwork) {
                 EventBus.getDefault().post(NetworkChangeEvent(isConnected))

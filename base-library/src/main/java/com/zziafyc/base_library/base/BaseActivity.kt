@@ -2,8 +2,6 @@ package com.zziafyc.base_library.base
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
-import com.zziafyc.base_library.constants.Constants
-import com.zziafyc.base_library.utils.PreferenceUtil
 import org.greenrobot.eventbus.EventBus
 
 /**
@@ -16,8 +14,7 @@ abstract class BaseActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(getLayoutId())
-        initView()
-        initData()
+        init(savedInstanceState)
         initListener()
         if (useEventBus()) {
             EventBus.getDefault().register(this)
@@ -28,6 +25,11 @@ abstract class BaseActivity : AppCompatActivity() {
      * 初始化布局
      */
     protected abstract fun getLayoutId(): Int
+
+    /**
+     * activity入口
+     */
+    abstract fun init(savedInstanceState: Bundle?)
 
     /**
      * 初始化view

@@ -11,17 +11,18 @@ import android.content.Context
  */
 open class BaseApp : Application() {
 
-    override fun onCreate() {
-        super.onCreate()
-        baseApp = this
-
-    }
-
     companion object {
         private lateinit var baseApp: BaseApp;
         fun getContext(): Context {
             return baseApp;
         }
     }
+
+    override fun onCreate() {
+        super.onCreate()
+        baseApp = this
+
+    }
+
 
 }

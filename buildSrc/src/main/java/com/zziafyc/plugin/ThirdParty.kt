@@ -15,7 +15,7 @@ object ThirdParty {
     const val eventBus = "org.greenrobot:eventbus:3.2.0"
 
     const val aviUi = "com.wang.avi:library:2.1.3"
-    const val banner = "cn.bingoogolapple:bga-banner:2.2.7"
+    const val banner = "com.github.pinguo-zhouwei:MZBannerView:v2.0.2"
     const val magic = "com.github.hackware1993:MagicIndicator:1.6.0"
     const val easypermissions = "pub.devrel:easypermissions:3.0.0"
     const val labelsView = "com.github.donkingliang:LabelsView:1.6.1"

@@ -32,7 +32,7 @@ android {
         jvmTarget = '1.8'
     }
     buildFeatures {
-        viewBinding true
+        dataBinding true
     }
 }
 
@@ -78,6 +78,12 @@ dependencies {
     api(Android.room.roomRuntime)
     api(Android.room.roomKtx)
 //    kapt(Android.room.roomCompiler)
+
+    /**
+     * navigation相关
+     */
+    api(Android.navigation.fragmentKtx)
+    api(Android.navigation.uiKtx)
 
     /**
      * 第三方库

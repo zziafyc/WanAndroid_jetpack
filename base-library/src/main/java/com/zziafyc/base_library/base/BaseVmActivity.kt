@@ -1,7 +1,9 @@
 package com.zziafyc.base_library.base
 
+import android.os.Bundle
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
+import com.zziafyc.base_library.utils.StatusUtils
 
 /**
  *
@@ -11,9 +13,23 @@ import androidx.lifecycle.ViewModelProvider
  */
 abstract class BaseVmActivity : BaseActivity() {
     private var mActivityProvider: ViewModelProvider? = null
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setSystemInvadeBlack()
+        initViewModel()
+        observe()
+    }
 
     /**
-     * 初始化viewModel
+     * 沉浸式状态
+     */
+    open fun setSystemInvadeBlack() {
+        //第二个参数是是否沉浸,第三个参数是状态栏字体是否为黑色。
+        StatusUtils.setSystemStatus(this, true, true)
+    }
+
+    /**
+     * 初始化viewModel,部分简单activity可能不需要viewModel，所以用open修饰
      */
     open fun initViewModel() {}
 
@@ -25,6 +41,13 @@ abstract class BaseVmActivity : BaseActivity() {
             mActivityProvider = ViewModelProvider(this)
         }
         return mActivityProvider?.get(modelClass)
+    }
+
+    /**
+     * 注册观察者
+     */
+    open fun observe() {
+
     }
 
 }
