@@ -105,6 +105,7 @@
                         app:canLoop="true"
                         app:indicatorAlign="center"
                         app:indicatorPaddingLeft="10dp"
+                        app:layout_scrollFlags="scroll"
                         app:open_mz_mode="true" />
                 </com.google.android.material.appbar.AppBarLayout>
 

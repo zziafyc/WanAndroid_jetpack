@@ -22,7 +22,7 @@ class HomeFragment : BaseVmFragment<FragmentHomeBinding>() {
     private var bannerList: MutableList<BannerBean>? = null
     private val adapter by lazy { ArticleAdapter(mActivity) }
 
-    override fun getLayoutId(): Int? {
+    override fun getLayoutId(): Int {
         return R.layout.fragment_home
     }
 
@@ -31,11 +31,6 @@ class HomeFragment : BaseVmFragment<FragmentHomeBinding>() {
         super.initViewModel()
         homeVM = getActivityViewModel(HomeVM::class.java)
 
-    }
-
-    override fun init(savedInstanceState: Bundle?) {
-        initView()
-        initData()
     }
 
     override fun initView() {

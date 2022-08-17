@@ -8,6 +8,7 @@ import android.view.ViewGroup
 import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
 import androidx.databinding.ViewDataBinding
+import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.NavController
@@ -20,12 +21,13 @@ import com.zziafyc.base_library.utils.ParamUtils
  * @date 2021/8/6 0006
  * @description
  */
-abstract class BaseVmFragment<BD : ViewDataBinding> : BaseFragment() {
+abstract class BaseVmFragment<BD : ViewDataBinding> : Fragment() {
+    lateinit var mContext: Context
+    lateinit var mActivity: AppCompatActivity
     private var activityProvider: ViewModelProvider? = null
     private var fragmentProvider: ViewModelProvider? = null
     protected lateinit var binding: BD
-    lateinit var mContext: Context
-    lateinit var mActivity: AppCompatActivity
+
     override fun onAttach(context: Context) {
         super.onAttach(context)
         this.mContext = context
@@ -67,16 +69,17 @@ abstract class BaseVmFragment<BD : ViewDataBinding> : BaseFragment() {
     }
 
     /**
-     * 初始化入口
+     * 初始化viewModel
+     * 之所以没有设计为抽象，是因为部分简单activity/fragment可能不需要viewModel
+     * observe同理
      */
-    abstract fun init(savedInstanceState: Bundle?)
+    open fun initViewModel() {
 
-    /**
-     *初始化viewModel
-     */
-    open fun initViewModel() {}
+    }
 
-    open fun initFragmentViewModel() {}
+    open fun initFragmentViewModel() {
+
+    }
 
     /**
      * 注册观察者
@@ -88,7 +91,7 @@ abstract class BaseVmFragment<BD : ViewDataBinding> : BaseFragment() {
      */
     protected fun <T : ViewModel?> getActivityViewModel(modelClass: Class<T>): T? {
         if (activityProvider == null) {
-            activityProvider = ViewModelProvider(this)
+            activityProvider = ViewModelProvider(mActivity)
         }
         return activityProvider?.get(modelClass)
     }
@@ -110,5 +113,35 @@ abstract class BaseVmFragment<BD : ViewDataBinding> : BaseFragment() {
     protected fun nav(): NavController {
         return NavHostFragment.findNavController(this)
     }
+
+    /**
+     * 初始化入口
+     */
+    open fun init(savedInstanceState: Bundle?) {
+        initView()
+        initData()
+    }
+
+    /**
+     * 初始化View以及事件
+     */
+    abstract fun initView()
+
+    /**
+     * 加载数据
+     */
+    abstract fun initData()
+
+    /**
+     * 点击事件
+     */
+    open fun initListener() {
+
+    }
+
+    /**
+     * 获取layout布局
+     */
+    abstract fun getLayoutId(): Int?
 
 }
