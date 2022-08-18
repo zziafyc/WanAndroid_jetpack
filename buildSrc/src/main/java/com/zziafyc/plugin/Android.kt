@@ -7,7 +7,7 @@
 @Suppress("SpellCheckingInspection")
 object Android {
 
-    const val appcompat = "androidx.appcompat:appcompat:1.2.0"
+    const val appcompat = "androidx.appcompat:appcompat:1.3.0-alpha02"
     const val coreKtx = "androidx.core:core-ktx:1.3.1"
     const val constraintlayout = "androidx.constraintlayout:constraintlayout:1.1.3"
     const val legacy = "androidx.legacy:legacy-support-v4:1.0.0"

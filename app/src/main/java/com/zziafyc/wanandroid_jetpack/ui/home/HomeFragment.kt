@@ -2,6 +2,7 @@ package com.zziafyc.wanandroid_jetpack.ui.home
 
 import android.os.Bundle
 import androidx.lifecycle.Observer
+import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.SimpleItemAnimator
 import com.zziafyc.base_library.base.BaseVmFragment
 import com.zziafyc.base_library.common.extend.smartConfig
@@ -9,6 +10,7 @@ import com.zziafyc.base_library.common.extend.smartDismiss
 import com.zziafyc.wanandroid_jetpack.R
 import com.zziafyc.wanandroid_jetpack.adapter.ArticleAdapter
 import com.zziafyc.wanandroid_jetpack.databinding.FragmentHomeBinding
+import com.zziafyc.wanandroid_jetpack.utils.CacheUtil
 import com.zziafyc.wanandroid_jetpack.viewholder.BannerViewHolder
 
 /**
@@ -35,8 +37,12 @@ class HomeFragment : BaseVmFragment<FragmentHomeBinding>() {
 
     override fun initView() {
         binding.vm = homeVM
-        //关闭更新动画
-        (binding.homeArticleRv.itemAnimator as SimpleItemAnimator).supportsChangeAnimations = false
+        binding.homeArticleRv.let {
+            it.layoutManager = LinearLayoutManager(mContext, LinearLayoutManager.VERTICAL, false)
+            it.adapter = adapter
+            //关闭更新动画
+            (it.itemAnimator as SimpleItemAnimator).supportsChangeAnimations = false
+        }
     }
 
     override fun initData() {
@@ -75,31 +81,30 @@ class HomeFragment : BaseVmFragment<FragmentHomeBinding>() {
         }
         binding.homeSmartRefresh.smartConfig()
         adapter.apply {
-            binding.homeArticleRv.adapter = this
             setOnItemClickListener { i, _ ->
-                //TODO:
-                /* nav().navigate(
-                     R.id.action_main_fragment_to_web_fragment,
-                     this@HomeFragment.adapter.getBundle(i)
-                 )*/
+                //进入文章详情
+                nav().navigate(
+                    R.id.action_main_fragment_to_web_fragment,
+                    this@HomeFragment.adapter.getBundle(i)
+                )
             }
             setOnItemChildClickListener { i, view ->
                 when (view.id) {
                     //收藏
-                    R.id.ivCollect -> {
-                        /*if (CacheUtil.isLogin()) {
-                            this@HomeFragment.adapter.currentList[i].apply {
-                                //已收藏取消收藏
-                                if (collect) {
-                                    homeVM?.unCollect(id)
-                                } else {
-                                    homeVm?.collect(id)
-                                }
-                            }
-                        } else {
-                            nav().navigate(R.id.action_main_fragment_to_login_fragment)
-                        }*/
-                    }
+//                    R.id.ivCollect -> {
+//                        if (CacheUtil.isLogin()) {
+//                            this@HomeFragment.adapter.currentList[i].apply {
+//                                //已收藏取消收藏
+//                                if (collect) {
+//                                    homeVM?.unCollect(id)
+//                                } else {
+//                                    homeVM?.collect(id)
+//                                }
+//                            }
+//                        } else {
+//                            nav().navigate(R.id.action_main_fragment_to_login_fragment)
+//                        }
+//                    }
                 }
             }
         }

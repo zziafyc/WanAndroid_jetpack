@@ -142,6 +142,6 @@ abstract class BaseVmFragment<BD : ViewDataBinding> : Fragment() {
     /**
      * 获取layout布局
      */
-    abstract fun getLayoutId(): Int?
+    abstract fun getLayoutId(): Int
 
 }

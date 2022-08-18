@@ -76,14 +76,7 @@ class MainFragment : BaseVmFragment<FragmentMainBinding>() {
         return R.layout.fragment_main
     }
 
-    override fun init(savedInstanceState: Bundle?) {
-        initView()
-        initData()
-    }
-
-
     override fun initView() {
-        Log.d("zziafyc", "initView: 点击了 sss ")
         //初始化viewpager2
         binding.vpHome.initFragment(childFragmentManager, fragmentList).run {
             //全部缓存,避免切换回重新加载

@@ -15,7 +15,7 @@ class TabFragment : BaseVmFragment<FragmentTabBinding>() {
     override fun init(savedInstanceState: Bundle?) {
     }
 
-    override fun getLayoutId(): Int? {
+    override fun getLayoutId(): Int {
         return R.layout.fragment_tab
     }
 

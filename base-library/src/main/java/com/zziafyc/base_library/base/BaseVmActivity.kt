@@ -17,7 +17,7 @@ abstract class BaseVmActivity : AppCompatActivity() {
     private var mActivityProvider: ViewModelProvider? = null
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        getLayoutId()?.let { setContentView(it) }
+        setContentView(getLayoutId())
         setStatusColor()
         setSystemInvadeBlack()
         initViewModel()
@@ -93,6 +93,6 @@ abstract class BaseVmActivity : AppCompatActivity() {
     /**
      * 获取layout布局
      */
-    abstract fun getLayoutId(): Int?
+    abstract fun getLayoutId(): Int
 
 }
