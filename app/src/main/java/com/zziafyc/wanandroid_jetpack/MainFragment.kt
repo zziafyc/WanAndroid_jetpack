@@ -14,12 +14,15 @@ import com.zziafyc.wanandroid_jetpack.ui.square.SquareFragment
 import com.zziafyc.wanandroid_jetpack.ui.tab.TabFragment
 
 /**
- *
  * @author zziafyc
- * @date 2021/8/4 0004
+ * @date 2022/8/5
  * @description
  */
 class MainFragment : BaseVmFragment<FragmentMainBinding>() {
+    /**
+     * fragment集合
+     */
+
     private val fragmentList = arrayListOf<Fragment>()
 
     /**
@@ -69,18 +72,11 @@ class MainFragment : BaseVmFragment<FragmentMainBinding>() {
         }
     }
 
-    override fun init(savedInstanceState: Bundle?) {
-        initView()
-        initData()
-    }
-
-
-    override fun getLayoutId(): Int? {
+    override fun getLayoutId(): Int {
         return R.layout.fragment_main
     }
 
     override fun initView() {
-        Log.d("zziafyc", "initView: 点击了 sss ")
         //初始化viewpager2
         binding.vpHome.initFragment(childFragmentManager, fragmentList).run {
             //全部缓存,避免切换回重新加载

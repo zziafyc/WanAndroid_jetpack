@@ -135,9 +135,7 @@ class ArticleAdapter(private val context: Context) :
     override fun submitList(list: List<ArticleBean>?) {
         super.submitList(if (list == null) mutableListOf() else
             mutableListOf<ArticleBean>().apply {
-                addAll(
-                    list
-                )
+                addAll(list)
             })
     }
 

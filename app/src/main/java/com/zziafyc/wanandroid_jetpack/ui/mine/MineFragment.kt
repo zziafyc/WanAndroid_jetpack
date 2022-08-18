@@ -12,10 +12,7 @@ import com.zziafyc.wanandroid_jetpack.databinding.FragmentMineBinding
  * @description
  */
 class MineFragment : BaseVmFragment<FragmentMineBinding>() {
-    override fun init(savedInstanceState: Bundle?) {
-    }
-
-    override fun getLayoutId(): Int? {
+    override fun getLayoutId(): Int {
         return R.layout.fragment_mine
     }
 

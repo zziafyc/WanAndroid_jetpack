@@ -15,7 +15,7 @@ class SquareFragment : BaseVmFragment<FragmentSquareBinding>() {
     override fun init(savedInstanceState: Bundle?) {
     }
 
-    override fun getLayoutId(): Int? {
+    override fun getLayoutId(): Int {
         return R.layout.fragment_square
     }
 

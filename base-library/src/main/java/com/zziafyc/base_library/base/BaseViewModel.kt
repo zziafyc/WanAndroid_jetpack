@@ -16,11 +16,10 @@ import java.net.SocketTimeoutException
 import java.net.UnknownHostException
 
 
-
 /**
  * 错误方法
  */
-typealias VmError =  (e: ApiException) -> Unit
+typealias VmError = (e: ApiException) -> Unit
 
 /**
  *
@@ -28,7 +27,7 @@ typealias VmError =  (e: ApiException) -> Unit
  * @date 2021/8/8 0008
  * @description 基础vm
  */
-open class BaseViewModel:ViewModel() {
+open class BaseViewModel : ViewModel() {
 
     /**
      * 错误信息liveData
@@ -38,32 +37,30 @@ open class BaseViewModel:ViewModel() {
     /**
      * 无更多数据
      */
-    val footLiveDate = MutableLiveData<Any>()
+    private val footLiveDate = MutableLiveData<Any>()
 
     /**
      * 无数据
      */
-    val emptyLiveDate = MutableLiveData<Any>()
+    private val emptyLiveDate = MutableLiveData<Any>()
 
     /**
      * 处理错误
      */
-    fun handleError(e: Throwable){
+    fun handleError(e: Throwable) {
         val error = getApiException(e)
         toast(error.errorMessage)
         errorLiveData.postValue(error)
     }
 
-    protected fun <T> launch(
-        block:  () -> T
-        , error:VmError? = null) {
+    protected fun <T> launch(block: () -> T, error: VmError? = null) {
         viewModelScope.launch {
             runCatching {
                 block()
             }.onFailure {
                 it.printStackTrace()
                 getApiException(it).apply {
-                    withContext(Dispatchers.Main){
+                    withContext(Dispatchers.Main) {
                         error?.invoke(this@apply)
                         toast(errorMessage)
                     }
@@ -82,7 +79,7 @@ open class BaseViewModel:ViewModel() {
                     return@onFailure
                 }
                 getApiException(it).apply {
-                    withContext(Dispatchers.Main){
+                    withContext(Dispatchers.Main) {
                         toast(errorMessage)
                         //统一响应错误信息
                         errorLiveData.value = this@apply
@@ -131,9 +128,9 @@ open class BaseViewModel:ViewModel() {
     /**
      * 处理列表是否有更多数据
      */
-    protected fun<T> handleList(listLiveData: LiveData<MutableList<T>>,pageSize:Int = 20){
-        val listSize = listLiveData.value?.size?:0
-        if (listSize % pageSize != 0){
+    protected fun <T> handleList(listLiveData: LiveData<MutableList<T>>, pageSize: Int = 20) {
+        val listSize = listLiveData.value?.size ?: 0
+        if (listSize % pageSize != 0) {
             footLiveDate.value = 1
         }
     }
