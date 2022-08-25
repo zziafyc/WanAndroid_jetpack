@@ -21,6 +21,7 @@ object ThirdParty {
     const val labelsView = "com.github.donkingliang:LabelsView:1.6.1"
     const val rxPermission = "com.github.tbruyelle:rxpermissions:0.12"
     const val shadow = "com.github.lihangleo2:ShadowLayout:3.1.3"
+    const val androidAutoSize = "com.github.JessYanCoding:AndroidAutoSize:v1.2.1"
 
     val retrofit = Retrofit
 

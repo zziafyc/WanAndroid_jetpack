@@ -112,4 +112,6 @@ dependencies {
     api(ThirdParty.smart.smart)
     api(ThirdParty.smart.head)
 
+    api(ThirdParty.androidAutoSize)
+
 }
