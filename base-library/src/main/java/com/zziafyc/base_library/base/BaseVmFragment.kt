@@ -123,6 +123,11 @@ abstract class BaseVmFragment<BD : ViewDataBinding> : Fragment() {
     }
 
     /**
+     * 获取layout布局
+     */
+    abstract fun getLayoutId(): Int
+
+    /**
      * 初始化View以及事件
      */
     abstract fun initView()
@@ -139,9 +144,5 @@ abstract class BaseVmFragment<BD : ViewDataBinding> : Fragment() {
 
     }
 
-    /**
-     * 获取layout布局
-     */
-    abstract fun getLayoutId(): Int
 
 }

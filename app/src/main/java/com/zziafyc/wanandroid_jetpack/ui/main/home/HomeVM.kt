@@ -1,4 +1,4 @@
-package com.zziafyc.wanandroid_jetpack.ui.home
+package com.zziafyc.wanandroid_jetpack.ui.main.home
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData

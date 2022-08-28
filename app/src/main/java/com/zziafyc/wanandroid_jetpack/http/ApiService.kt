@@ -2,11 +2,11 @@ package com.zziafyc.wanandroid_jetpack.http
 
 import com.zziafyc.wanandroid_jetpack.bean.*
 import com.zziafyc.wanandroid_jetpack.ui.collect.CollectListBean
-import com.zziafyc.wanandroid_jetpack.ui.home.BannerBean
+import com.zziafyc.wanandroid_jetpack.ui.main.home.BannerBean
 import com.zziafyc.wanandroid_jetpack.ui.intergral.IntegralRecordListBean
 import com.zziafyc.wanandroid_jetpack.ui.login.UserBean
-import com.zziafyc.wanandroid_jetpack.ui.mine.IntegralBean
-import com.zziafyc.wanandroid_jetpack.ui.mine.MyShareArticleListBean
+import com.zziafyc.wanandroid_jetpack.ui.main.mine.IntegralBean
+import com.zziafyc.wanandroid_jetpack.ui.main.mine.MyShareArticleListBean
 import com.zziafyc.wanandroid_jetpack.ui.rank.RankListBean
 import com.zziafyc.wanandroid_jetpack.ui.square.navi.NavigationBean
 import com.zziafyc.wanandroid_jetpack.ui.square.system.SystemBean

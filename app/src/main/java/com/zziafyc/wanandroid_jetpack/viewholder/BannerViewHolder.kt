@@ -7,7 +7,7 @@ import android.widget.ImageView
 import com.bumptech.glide.Glide
 import com.zhouwei.mzbanner.holder.MZViewHolder
 import com.zziafyc.wanandroid_jetpack.R
-import com.zziafyc.wanandroid_jetpack.ui.home.BannerBean
+import com.zziafyc.wanandroid_jetpack.ui.main.home.BannerBean
 
 /**
  * @author zziafyc

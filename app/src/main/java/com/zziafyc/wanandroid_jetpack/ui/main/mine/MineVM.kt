@@ -1,4 +1,4 @@
-package com.zziafyc.wanandroid_jetpack.ui.mine
+package com.zziafyc.wanandroid_jetpack.ui.main.mine
 
 import androidx.databinding.ObservableField
 import androidx.lifecycle.MutableLiveData

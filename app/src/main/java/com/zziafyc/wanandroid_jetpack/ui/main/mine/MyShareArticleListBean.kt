@@ -1,4 +1,4 @@
-package com.zziafyc.wanandroid_jetpack.ui.mine
+package com.zziafyc.wanandroid_jetpack.ui.main.mine
 
 import com.zziafyc.wanandroid_jetpack.bean.ArticleListBean
 

@@ -1,4 +1,4 @@
-package com.zziafyc.wanandroid_jetpack.ui.mine
+package com.zziafyc.wanandroid_jetpack.ui.main.mine
 
 import com.zziafyc.base_library.base.BaseRepository
 import com.zziafyc.wanandroid_jetpack.http.ApiService
