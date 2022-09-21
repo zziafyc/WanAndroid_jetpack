@@ -33,4 +33,11 @@
     <string name="copyright">版权声明</string>
 
     <string name="exitLogin">退出登录</string>
+    <string name="login_first_please">请先登录</string>
+    <string name="prompt">提示语</string>
+    <string name="sure">确认</string>
+    <string name="cancel">取消</string>
+    <string name="isLoading">正在加载</string>
+    <string name="makeSure_logout">确定要退出登录吗？</string>
+    <string name="have_logout">已退出登录</string>
 </resources>

@@ -13,7 +13,7 @@ import java.io.*
  * @date 2021/8/2 0002
  * @description kotlin委托属性 + SharedPreference实例
  */
-object PreferenceUtils {
+object SharePreferenceUtils {
 
     private const val PREF_NAME = "config"
 

@@ -37,14 +37,14 @@
                 android:id="@+id/tv_mine_name"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="@dimen/dp_30"
-                android:hint="zziafyc"
+                android:layout_marginTop="@dimen/dp_70"
+                android:hint="@string/login_first_please"
                 android:text="@{vm.username}"
                 android:textColor="?attr/theme_color_1"
                 android:textSize="@dimen/sp_22"
                 android:textStyle="bold"
-                app:layout_constraintBottom_toBottomOf="@+id/iv_mine_head"
-                app:layout_constraintLeft_toRightOf="@+id/iv_mine_head" />
+                app:layout_constraintLeft_toRightOf="@+id/iv_mine_head"
+                app:layout_constraintTop_toTopOf="parent" />
 
             <LinearLayout
                 android:id="@+id/ll_mine_history"

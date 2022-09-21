@@ -1,9 +1,13 @@
 package com.zziafyc.wanandroid_jetpack.ui.settings
 
+import androidx.lifecycle.Observer
 import com.zziafyc.base_library.base.BaseVmFragment
 import com.zziafyc.base_library.common.extend.clickNoRepeat
+import com.zziafyc.base_library.common.extend.toast
 import com.zziafyc.wanandroid_jetpack.R
 import com.zziafyc.wanandroid_jetpack.databinding.FragmentSettingsBinding
+import com.zziafyc.wanandroid_jetpack.utils.CacheUtil
+import com.zziafyc.wanandroid_jetpack.utils.DialogUtils
 
 /**
  * @author zziafyc
@@ -28,11 +32,30 @@ class SettingsFragment : BaseVmFragment<FragmentSettingsBinding>() {
     override fun initData() {
     }
 
+    override fun observer() {
+        super.observer()
+        settingsVM?.logoutLiveData?.observe(this, Observer {
+            toast(resources.getString(R.string.have_logout))
+        })
+
+    }
 
     override fun initListener() {
         super.initListener()
         binding.ivSettingBack.clickNoRepeat {
             nav().navigateUp()
+        }
+        binding.tvSettingsLogout.clickNoRepeat {
+            if (!CacheUtil.isLogin()) {
+                toast(resources.getString(R.string.login_first_please))
+                return@clickNoRepeat
+            }
+
+            DialogUtils.confirm(mActivity, resources.getString(R.string.makeSure_logout)) {
+                settingsVM?.logout()
+                nav().navigateUp()
+            }
+
         }
     }
 }

@@ -1,9 +1,11 @@
 package com.zziafyc.wanandroid_jetpack.utils
 
-import com.zziafyc.base_library.utils.PreferenceUtils
+import com.zziafyc.base_library.utils.SharePreferenceUtils
 import com.zziafyc.wanandroid_jetpack.constants.Constants
+import com.zziafyc.wanandroid_jetpack.event.LoginEvent
 import com.zziafyc.wanandroid_jetpack.event.LogoutEvent
 import org.greenrobot.eventbus.EventBus
+import java.util.*
 
 /**
  * des 缓存工具类
@@ -17,7 +19,7 @@ class CacheUtil {
          * 登录状态
          */
         fun isLogin(): Boolean {
-            return PreferenceUtils.getBoolean(Constants.LOGIN, false)
+            return SharePreferenceUtils.getBoolean(Constants.LOGIN, false)
         }
 
         /**
@@ -27,11 +29,23 @@ class CacheUtil {
             //发送退出登录消息
             EventBus.getDefault().post(LogoutEvent())
             //更新登陆状态
-            PreferenceUtils.setBoolean(Constants.LOGIN, false)
+            SharePreferenceUtils.setBoolean(Constants.LOGIN, false)
             //移除用户信息
-            PreferenceUtils.removeKey(Constants.USER_INFO)
+            SharePreferenceUtils.removeKey(Constants.USER_INFO)
             //移除积分信息
-            PreferenceUtils.removeKey(Constants.INTEGRAL_INFO)
+            SharePreferenceUtils.removeKey(Constants.INTEGRAL_INFO)
+        }
+
+        /**
+         * 登录
+         */
+        fun setLogin(data: Any?) {
+            //登陆成功保存用户信息，并发送消息
+            SharePreferenceUtils.setObject(Constants.USER_INFO, data)
+            //更改登陆状态
+            SharePreferenceUtils.setBoolean(Constants.LOGIN, true)
+            //发送登陆消息
+            EventBus.getDefault().post(LoginEvent())
         }
     }
 }

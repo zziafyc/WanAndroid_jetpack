@@ -35,5 +35,8 @@ class MineFragment : BaseVmFragment<FragmentMineBinding>() {
         binding.clMineSettings.clickNoRepeat {
             nav().navigate(R.id.action_main_fragment_to_settings_fragment)
         }
+        binding.tvMineName.clickNoRepeat{
+            nav().navigate(R.id.action_main_fragment_to_login_fragment)
+        }
     }
 }

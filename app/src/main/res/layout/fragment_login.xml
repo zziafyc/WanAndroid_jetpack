@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="vm"
+            type="com.zziafyc.wanandroid_jetpack.ui.login.LoginVM" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="?attr/main_bg_1"
+        android:fitsSystemWindows="true">
+
+        <ImageView
+            android:id="@+id/iv_login_head"
+            android:layout_width="@dimen/dp_100"
+            android:layout_height="@dimen/dp_100"
+            android:layout_marginTop="@dimen/dp_100"
+            android:background="@mipmap/ic_launcher_round"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <EditText
+            android:id="@+id/edit_login_username"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_40"
+            android:layout_marginLeft="@dimen/padding"
+            android:layout_marginTop="@dimen/dp_120"
+            android:layout_marginRight="@dimen/padding"
+            android:background="@null"
+            android:hint="请输入账号"
+            android:text="@={vm.username}"
+            android:textColor="?attr/theme_color_1"
+            android:textColorHint="?attr/theme_color_3"
+            android:textSize="@dimen/sp_15"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/iv_login_head" />
+
+        <ImageView
+            android:id="@+id/iv_login_clear"
+            android:layout_width="@dimen/dp_40"
+            android:layout_height="@dimen/dp_40"
+            android:background="@drawable/ripple_circle_bg"
+            android:padding="@dimen/dp_10"
+            android:src="@drawable/svg_clear"
+            app:layout_constraintBottom_toBottomOf="@+id/edit_login_username"
+            app:layout_constraintRight_toRightOf="@+id/edit_login_username"
+            app:layout_constraintTop_toTopOf="@+id/edit_login_username" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginLeft="@dimen/padding"
+            android:layout_marginRight="@dimen/padding"
+            android:background="?attr/division_line"
+            app:layout_constraintTop_toBottomOf="@+id/edit_login_username" />
+
+        <EditText
+            android:id="@+id/edit_login_password"
+            passType="@{vm.passwordVisibility}"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_marginLeft="@dimen/padding"
+            android:layout_marginTop="30dp"
+            android:layout_marginRight="@dimen/padding"
+            android:background="@null"
+            android:hint="请输入密码"
+            android:inputType="textPassword"
+            android:text="@={vm.password}"
+            android:textColor="?attr/theme_color_1"
+            android:textColorHint="?attr/theme_color_3"
+            android:textSize="@dimen/text_1"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/edit_login_username" />
+
+        <ImageView
+            android:id="@+id/iv_login_passwordVisibility"
+            passSrc="@{vm.passwordVisibility}"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:background="@drawable/ripple_circle_bg"
+            android:padding="8dp"
+            android:src="@drawable/selector_pass"
+            app:layout_constraintBottom_toBottomOf="@+id/edit_login_password"
+            app:layout_constraintRight_toRightOf="@+id/edit_login_password"
+            app:layout_constraintTop_toTopOf="@+id/edit_login_password" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginLeft="@dimen/padding"
+            android:layout_marginRight="@dimen/padding"
+            android:background="?attr/division_line"
+            app:layout_constraintTop_toBottomOf="@+id/edit_login_password" />
+
+        <RelativeLayout
+            android:id="@+id/rl_login_login"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_marginLeft="50dp"
+            android:layout_marginTop="50dp"
+            android:layout_marginRight="50dp"
+            android:background="?attr/main_bg_2"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/edit_login_password">
+
+            <TextView
+                android:id="@+id/tv_login_login"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_centerVertical="true"
+                android:text="登陆"
+                android:textColor="?attr/theme_color_2"
+                android:textSize="@dimen/text_1"
+                android:textStyle="bold" />
+
+            <com.wang.avi.AVLoadingIndicatorView
+                android:id="@+id/indicatorView"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_centerHorizontal="true"
+                android:layout_centerVertical="true"
+                android:visibility="gone"
+                app:indicatorColor="@color/white"
+                app:indicatorName="BallSpinFadeLoaderIndicator" />
+        </RelativeLayout>
+
+        <TextView
+            android:id="@+id/tv_login_register"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/ripple_bg"
+            android:gravity="center"
+            android:text="没有账号？去注册"
+            android:textColor="@color/theme"
+            android:textSize="@dimen/text_1"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/rl_login_login" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

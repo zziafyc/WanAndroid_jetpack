@@ -3,7 +3,7 @@ package com.zziafyc.wanandroid_jetpack.ui.main.mine
 import androidx.databinding.ObservableField
 import androidx.lifecycle.MutableLiveData
 import com.zziafyc.base_library.base.BaseViewModel
-import com.zziafyc.base_library.utils.PreferenceUtils
+import com.zziafyc.base_library.utils.SharePreferenceUtils
 import com.zziafyc.wanandroid_jetpack.constants.Constants
 import com.zziafyc.wanandroid_jetpack.utils.CacheUtil
 
@@ -48,7 +48,7 @@ class MineVM : BaseViewModel() {
     fun getInternal() {
         launch {
             var integralBean: IntegralBean? = null
-            PreferenceUtils.getObject(Constants.INTEGRAL_INFO)?.let {
+            SharePreferenceUtils.getObject(Constants.INTEGRAL_INFO)?.let {
                 //先从本地获取积分，获取不到再通过网络获取
                 integralBean = it as IntegralBean?
             }
@@ -56,7 +56,7 @@ class MineVM : BaseViewModel() {
                 if (CacheUtil.isLogin()) {
                     val data = repo.getIntegral()
                     setIntegral(data)
-                    PreferenceUtils.setObject(Constants.INTEGRAL_INFO, data)
+                    SharePreferenceUtils.setObject(Constants.INTEGRAL_INFO, data)
                 }
             } else {
                 setIntegral(integralBean)
