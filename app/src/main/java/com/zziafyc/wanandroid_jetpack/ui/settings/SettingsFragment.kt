@@ -53,7 +53,6 @@ class SettingsFragment : BaseVmFragment<FragmentSettingsBinding>() {
 
             DialogUtils.confirm(mActivity, resources.getString(R.string.makeSure_logout)) {
                 settingsVM?.logout()
-                nav().navigateUp()
             }
 
         }

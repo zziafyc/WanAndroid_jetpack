@@ -64,6 +64,17 @@ class MineVM : BaseViewModel() {
         }
     }
 
+    /**
+     * 每次重新登录了之后，积分信息会重新获取
+     */
+    fun getInternalFromNetwork() {
+        launch {
+            val data = repo.getIntegral()
+            setIntegral(data)
+            SharePreferenceUtils.setObject(Constants.INTEGRAL_INFO, data)
+        }
+    }
+
     private fun setIntegral(integralBean: IntegralBean?) {
         integralBean?.let { it ->
             //通过dataBinDing与View绑定

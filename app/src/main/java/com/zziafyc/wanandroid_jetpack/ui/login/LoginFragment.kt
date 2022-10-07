@@ -32,7 +32,7 @@ class LoginFragment : BaseVmFragment<FragmentLoginBinding>() {
         super.observer()
         loginVM?.loginLiveData?.observe(this, Observer {
             toast("登陆成功")
-//            nav().navigateUp()
+            nav().navigateUp()
         })
         loginVM?.errorLiveData?.observe(this, Observer {
             toast("登陆失败,错误码：" + it.errorCode + ",错误信息：" + it.errorMessage)

@@ -14,6 +14,7 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.NavController
 import com.zziafyc.base_library.navigation.NavHostFragment
 import com.zziafyc.base_library.utils.ParamUtils
+import org.greenrobot.eventbus.EventBus
 
 /**
  *
@@ -50,6 +51,10 @@ abstract class BaseVmFragment<BD : ViewDataBinding> : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
+        //注册eventbus
+        if (useEventBus()) {
+            EventBus.getDefault().register(this)
+        }
         getLayoutId()?.let {
             //获取viewBinding
             binding = DataBindingUtil.inflate(inflater, it, container, false)
@@ -141,6 +146,19 @@ abstract class BaseVmFragment<BD : ViewDataBinding> : Fragment() {
      * 点击事件
      */
     open fun initListener() {
+
+    }
+
+    /**
+     * 是否注册使用eventbus
+     */
+    open fun useEventBus() = false
+
+    override fun onDestroyView() {
+        super.onDestroyView()
+        if (useEventBus()) {
+            EventBus.getDefault().unregister(this)
+        }
 
     }
 
