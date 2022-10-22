@@ -16,22 +16,23 @@
         android:id="@+id/root">
 
         <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
             android:id="@+id/tvTag"
             style="@style/text_3"
-            tools:text="置顶 "
-            android:text="@{dataBean.topTitle}"
-            android:textColor="@color/red"
-            android:layout_marginLeft="@dimen/padding" />
-
-        <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/padding"
+            android:text="@{dataBean.topTitle}"
+            android:textColor="@color/red"
+            tools:text="置顶 " />
+
+        <TextView
             android:id="@+id/tvAuthor"
             style="@style/text_3"
-            android:text="@{dataBean.author}"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:layout_toRightOf="@+id/tvTag"
+            android:layout_marginLeft="8dp"
+            android:text="@{dataBean.author}"
             tools:text="鸿洋" />
 
         <TextView

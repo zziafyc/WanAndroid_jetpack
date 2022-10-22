@@ -1,15 +1,14 @@
 package com.zziafyc.wanandroid_jetpack
 
 import android.os.Bundle
-import android.util.Log
 import androidx.fragment.app.Fragment
 import com.zziafyc.base_library.base.BaseVmFragment
 import com.zziafyc.base_library.common.extend.doSelected
 import com.zziafyc.base_library.common.extend.initFragment
 import com.zziafyc.wanandroid_jetpack.constants.Constants
 import com.zziafyc.wanandroid_jetpack.databinding.FragmentMainBinding
-import com.zziafyc.wanandroid_jetpack.ui.home.HomeFragment
-import com.zziafyc.wanandroid_jetpack.ui.mine.MineFragment
+import com.zziafyc.wanandroid_jetpack.ui.main.home.HomeFragment
+import com.zziafyc.wanandroid_jetpack.ui.main.mine.MineFragment
 import com.zziafyc.wanandroid_jetpack.ui.square.SquareFragment
 import com.zziafyc.wanandroid_jetpack.ui.tab.TabFragment
 

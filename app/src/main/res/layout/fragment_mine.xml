@@ -7,7 +7,7 @@
 
         <variable
             name="vm"
-            type="com.zziafyc.wanandroid_jetpack.ui.mine.MineVM" />
+            type="com.zziafyc.wanandroid_jetpack.ui.main.mine.MineVM" />
     </data>
 
     <androidx.core.widget.NestedScrollView
@@ -22,44 +22,32 @@
             android:layout_height="match_parent">
 
             <ImageView
-                android:id="@+id/ivHead"
-                android:layout_width="75dp"
-                android:layout_height="75dp"
-                android:layout_marginLeft="@dimen/set_padding"
-                android:layout_marginTop="50dp"
+                android:id="@+id/iv_mine_head"
+                android:layout_width="@dimen/dp_75"
+                android:layout_height="@dimen/dp_75"
+                android:layout_marginStart="@dimen/set_padding"
+                android:layout_marginTop="@dimen/dp_50"
                 android:scaleType="centerCrop"
                 android:src="@mipmap/head"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
+
             <TextView
-                android:id="@+id/tvName"
+                android:id="@+id/tv_mine_name"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="10dp"
+                android:layout_marginTop="@dimen/dp_70"
+                android:hint="@string/login_first_please"
                 android:text="@{vm.username}"
                 android:textColor="?attr/theme_color_1"
-                android:textSize="17dp"
+                android:textSize="@dimen/sp_22"
                 android:textStyle="bold"
-                app:layout_constraintBottom_toBottomOf="@+id/tvId"
-                app:layout_constraintLeft_toRightOf="@+id/ivHead"
-                app:layout_constraintTop_toTopOf="@+id/ivHead" />
-
-            <TextView
-                android:id="@+id/tvId"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="2dp"
-                android:layout_marginTop="5dp"
-                android:text="@{vm.id}"
-                android:textColor="?attr/theme_color_1"
-                android:textSize="@dimen/text_2"
-                app:layout_constraintBottom_toBottomOf="@+id/ivHead"
-                app:layout_constraintLeft_toLeftOf="@+id/tvName"
-                app:layout_constraintTop_toTopOf="@+id/tvName" />
+                app:layout_constraintLeft_toRightOf="@+id/iv_mine_head"
+                app:layout_constraintTop_toTopOf="parent" />
 
             <LinearLayout
-                android:id="@+id/llHistory"
+                android:id="@+id/ll_mine_history"
                 android:layout_width="0dp"
                 android:layout_height="80dp"
                 android:layout_weight="1"
@@ -67,11 +55,11 @@
                 android:gravity="center"
                 android:orientation="vertical"
                 app:layout_constraintLeft_toLeftOf="parent"
-                app:layout_constraintRight_toLeftOf="@+id/llRanking"
-                app:layout_constraintTop_toBottomOf="@+id/ivHead">
+                app:layout_constraintRight_toLeftOf="@+id/ll_mine_ranking"
+                app:layout_constraintTop_toBottomOf="@+id/iv_mine_head">
 
                 <TextView
-                    android:id="@+id/tvHistory"
+                    android:id="@+id/tv_mine_history"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="0"
@@ -87,19 +75,19 @@
             </LinearLayout>
 
             <LinearLayout
-                android:id="@+id/llRanking"
+                android:id="@+id/ll_mine_ranking"
                 android:layout_width="0dp"
                 android:layout_height="80dp"
                 android:layout_weight="1"
                 android:background="@drawable/ripple_bg"
                 android:gravity="center"
                 android:orientation="vertical"
-                app:layout_constraintLeft_toRightOf="@+id/llHistory"
+                app:layout_constraintLeft_toRightOf="@+id/ll_mine_history"
                 app:layout_constraintRight_toRightOf="parent"
-                app:layout_constraintTop_toTopOf="@+id/llHistory">
+                app:layout_constraintTop_toTopOf="@+id/ll_mine_history">
 
                 <TextView
-                    android:id="@+id/tvRanking"
+                    android:id="@+id/tv_mine_ranking"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@{vm.rank}"
@@ -111,18 +99,18 @@
                     style="@style/text_2"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="排名" />
+                    android:text="@string/rank" />
             </LinearLayout>
 
             <View
                 android:layout_width="match_parent"
                 android:layout_height="8dp"
                 android:background="?attr/division_line"
-                app:layout_constraintTop_toBottomOf="@+id/llRanking" />
+                app:layout_constraintTop_toBottomOf="@+id/ll_mine_ranking" />
 
 
             <androidx.constraintlayout.widget.ConstraintLayout
-                android:id="@+id/clIntegral"
+                android:id="@+id/cl_mine_integral"
                 android:layout_width="match_parent"
                 android:layout_height="60dp"
                 android:layout_marginTop="8dp"
@@ -130,11 +118,11 @@
                 android:paddingLeft="@dimen/set_padding"
                 android:paddingRight="@dimen/set_padding"
                 app:layout_constraintLeft_toLeftOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/llRanking">
+                app:layout_constraintTop_toBottomOf="@+id/ll_mine_ranking">
 
                 <ImageView
-                    android:layout_width="27dp"
-                    android:layout_height="27dp"
+                    android:layout_width="@dimen/dp_27"
+                    android:layout_height="@dimen/dp_27"
                     android:layout_centerVertical="true"
                     android:src="@mipmap/integral"
                     app:layout_constraintBottom_toBottomOf="parent"
@@ -146,10 +134,10 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_centerVertical="true"
-                    android:layout_marginLeft="40dp"
-                    android:drawableRight="@mipmap/arrow_right"
-                    android:text="我的积分"
+                    android:layout_marginStart="@dimen/dp_40"
+                    android:text="@string/myIntegral"
                     android:textStyle="bold"
+                    app:drawableEndCompat="@mipmap/arrow_right"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
 
@@ -159,7 +147,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_centerVertical="true"
-                    android:layout_marginRight="40dp"
+                    android:layout_marginEnd="40dp"
                     android:text="@{vm.internal}"
                     android:textColor="@color/orange"
                     android:textSize="@dimen/text_2"
@@ -173,7 +161,7 @@
                     android:layout_height="wrap_content"
                     android:layout_centerVertical="true"
                     android:layout_marginRight="6dp"
-                    android:text="当前积分:"
+                    android:text="@string/currentIntegral"
                     android:textColor="?attr/theme_color_2"
                     android:textSize="@dimen/text_2"
                     android:textStyle="bold"
@@ -183,7 +171,7 @@
             </androidx.constraintlayout.widget.ConstraintLayout>
 
             <androidx.constraintlayout.widget.ConstraintLayout
-                android:id="@+id/clCollect"
+                android:id="@+id/cl_mine_Collect"
                 android:layout_width="match_parent"
                 android:layout_height="60dp"
                 android:background="@drawable/ripple_bg"
@@ -191,7 +179,7 @@
                 android:paddingLeft="@dimen/set_padding"
                 android:paddingRight="@dimen/set_padding"
                 app:layout_constraintLeft_toLeftOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/clIntegral">
+                app:layout_constraintTop_toBottomOf="@+id/cl_mine_integral">
 
                 <ImageView
                     android:layout_width="27dp"
@@ -210,7 +198,7 @@
                     android:layout_centerVertical="true"
                     android:layout_marginLeft="40dp"
                     android:drawableRight="@mipmap/arrow_right"
-                    android:text="我的收藏"
+                    android:text="@string/myCollection"
                     android:textStyle="bold"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
@@ -218,14 +206,14 @@
             </androidx.constraintlayout.widget.ConstraintLayout>
 
             <androidx.constraintlayout.widget.ConstraintLayout
-                android:id="@+id/clArticle"
+                android:id="@+id/cl_mine_article"
                 android:layout_width="match_parent"
                 android:layout_height="60dp"
                 android:background="@drawable/ripple_bg"
                 android:orientation="horizontal"
                 android:paddingLeft="@dimen/set_padding"
                 android:paddingRight="@dimen/set_padding"
-                app:layout_constraintTop_toBottomOf="@+id/clCollect">
+                app:layout_constraintTop_toBottomOf="@+id/cl_mine_Collect">
 
                 <ImageView
                     android:layout_width="27dp"
@@ -242,10 +230,10 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_centerVertical="true"
-                    android:layout_marginLeft="40dp"
-                    android:drawableRight="@mipmap/arrow_right"
-                    android:text="我的文章"
+                    android:layout_marginStart="40dp"
+                    android:text="@string/myArticle"
                     android:textStyle="bold"
+                    app:drawableEndCompat="@mipmap/arrow_right"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
             </androidx.constraintlayout.widget.ConstraintLayout>
@@ -254,10 +242,10 @@
                 android:layout_width="match_parent"
                 android:layout_height="8dp"
                 android:background="?attr/division_line"
-                app:layout_constraintTop_toBottomOf="@+id/clArticle" />
+                app:layout_constraintTop_toBottomOf="@+id/cl_mine_article" />
 
             <androidx.constraintlayout.widget.ConstraintLayout
-                android:id="@+id/clWebsite"
+                android:id="@+id/cl_mine_website"
                 android:layout_width="match_parent"
                 android:layout_height="60dp"
                 android:layout_marginTop="8dp"
@@ -265,7 +253,7 @@
                 android:orientation="horizontal"
                 android:paddingLeft="@dimen/set_padding"
                 android:paddingRight="@dimen/set_padding"
-                app:layout_constraintTop_toBottomOf="@+id/clArticle">
+                app:layout_constraintTop_toBottomOf="@+id/cl_mine_article">
 
                 <ImageView
                     android:layout_width="27dp"
@@ -282,43 +270,44 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_centerVertical="true"
-                    android:layout_marginLeft="40dp"
-                    android:drawableRight="@mipmap/arrow_right"
-                    android:text="网站"
+                    android:layout_marginStart="40dp"
+                    android:text="@string/netSite"
                     android:textStyle="bold"
+                    app:drawableEndCompat="@mipmap/arrow_right"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
             </androidx.constraintlayout.widget.ConstraintLayout>
 
 
             <androidx.constraintlayout.widget.ConstraintLayout
-                android:id="@+id/clSet"
+                android:id="@+id/cl_mine_settings"
                 android:layout_width="match_parent"
                 android:layout_height="60dp"
                 android:background="@drawable/ripple_bg"
                 android:orientation="horizontal"
                 android:paddingLeft="@dimen/set_padding"
                 android:paddingRight="@dimen/set_padding"
-                app:layout_constraintTop_toBottomOf="@+id/clWebsite">
+                app:layout_constraintTop_toBottomOf="@+id/cl_mine_website">
 
                 <ImageView
                     android:layout_width="27dp"
                     android:layout_height="27dp"
                     android:layout_centerVertical="true"
-                    android:src="@mipmap/set"
+                    android:src="@mipmap/settings"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintLeft_toLeftOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
 
                 <TextView
+                    android:id="@+id/tv_mine_setting"
                     style="@style/text_1"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_centerVertical="true"
-                    android:layout_marginLeft="40dp"
-                    android:drawableRight="@mipmap/arrow_right"
-                    android:text="设置"
+                    android:layout_marginStart="40dp"
+                    android:text="@string/settings"
                     android:textStyle="bold"
+                    app:drawableEndCompat="@mipmap/arrow_right"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
             </androidx.constraintlayout.widget.ConstraintLayout>

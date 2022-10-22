@@ -14,12 +14,28 @@
         <action
             android:id="@+id/action_main_fragment_to_web_fragment"
             app:destination="@+id/web_fragment" />
+        <action
+            android:id="@+id/action_main_fragment_to_settings_fragment"
+            app:destination="@+id/settings_fragment" />
+        <action
+            android:id="@+id/action_main_fragment_to_login_fragment"
+            app:destination="@+id/login_fragment" />
     </fragment>
     <fragment
         android:id="@+id/web_fragment"
         android:name="com.zziafyc.wanandroid_jetpack.ui.web.WebFragment"
         android:label="WebFragment"
         tools:layout="@layout/fragment_web" />
+    <fragment
+        android:id="@+id/settings_fragment"
+        android:name="com.zziafyc.wanandroid_jetpack.ui.settings.SettingsFragment"
+        android:label="settingsFragment"
+        tools:layout="@layout/fragment_settings" />
+    <fragment
+        android:id="@+id/login_fragment"
+        android:name="com.zziafyc.wanandroid_jetpack.ui.login.LoginFragment"
+        android:label="LoginFragment"
+        tools:layout="@layout/fragment_login" />
 
 
 </navigation>

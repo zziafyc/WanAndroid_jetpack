@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="vm"
+            type="com.zziafyc.wanandroid_jetpack.ui.settings.SettingsVM" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="?attr/main_bg_1"
+        android:fitsSystemWindows="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_55"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <ImageView
+                android:id="@+id/iv_setting_back"
+                android:layout_width="@dimen/dp_50"
+                android:layout_height="@dimen/dp_50"
+                android:background="@drawable/ripple_circle_bg"
+                android:padding="@dimen/dp_15"
+                android:src="@drawable/svg_back" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/settings"
+                android:textSize="@dimen/sp_17" />
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/tv_settings_night"
+            style="@style/text_1"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_60"
+            android:layout_marginTop="@dimen/dp_58"
+            android:background="@drawable/ripple_bg"
+            android:gravity="center_vertical"
+            android:paddingLeft="@dimen/padding"
+            android:paddingRight="@dimen/padding"
+            android:text="@string/nightMode"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.appcompat.widget.SwitchCompat
+            android:id="@+id/sc_settings_DayNight"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/padding"
+            app:layout_constraintBottom_toBottomOf="@+id/tv_settings_night"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/tv_settings_night" />
+
+        <TextView
+            android:id="@+id/tv_settings_clear"
+            style="@style/text_1"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:layout_marginTop="58dp"
+            android:background="@drawable/ripple_bg"
+            android:gravity="center_vertical"
+            android:paddingLeft="@dimen/padding"
+            android:paddingRight="@dimen/padding"
+            android:text="@string/clearCache"
+            app:drawableRightCompat="@mipmap/arrow_right"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/tv_settings_night" />
+
+        <TextView
+            android:id="@+id/tv_settings_clearValue"
+            style="@style/text_2"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/dp_60"
+            android:layout_marginEnd="@dimen/dp_50"
+            android:gravity="center_vertical"
+            app:layout_constraintBottom_toBottomOf="@+id/tv_settings_clear"
+            app:layout_constraintRight_toRightOf="@+id/tv_settings_clear"
+            app:layout_constraintTop_toTopOf="@+id/tv_settings_clear"
+            tools:text="1.23M" />
+
+        <TextView
+            android:id="@+id/tv_settings_version"
+            style="@style/text_1"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:background="@drawable/ripple_bg"
+            android:gravity="center_vertical"
+            android:paddingLeft="@dimen/padding"
+            android:paddingRight="@dimen/padding"
+            android:text="@string/version"
+            app:drawableRightCompat="@mipmap/arrow_right"
+            app:layout_constraintTop_toBottomOf="@id/tv_settings_clear" />
+
+        <TextView
+            android:id="@+id/tv_settings_versionValue"
+            style="@style/text_2"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/dp_60"
+            android:layout_marginEnd="@dimen/dp_50"
+            android:gravity="center_vertical"
+            android:text="@string/version_value"
+            app:layout_constraintBottom_toBottomOf="@+id/tv_settings_version"
+            app:layout_constraintRight_toRightOf="@+id/tv_settings_version"
+            app:layout_constraintTop_toTopOf="@+id/tv_settings_version" />
+
+        <TextView
+            android:id="@+id/tv_settings_author"
+            style="@style/text_1"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_60"
+            android:layout_marginTop="8dp"
+            android:background="@drawable/ripple_bg"
+            android:gravity="center_vertical"
+            android:paddingLeft="@dimen/padding"
+            android:paddingRight="@dimen/padding"
+            android:text="@string/author"
+            app:drawableRightCompat="@mipmap/arrow_right"
+            app:layout_constraintTop_toBottomOf="@+id/tv_settings_version" />
+
+        <TextView
+            android:id="@+id/tv_settings_authorValue"
+            style="@style/text_2"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/dp_60"
+            android:layout_marginEnd="@dimen/dp_50"
+            android:gravity="center_vertical"
+            android:text="@string/author_name"
+            app:layout_constraintBottom_toBottomOf="@+id/tv_settings_author"
+            app:layout_constraintRight_toRightOf="@+id/tv_settings_author"
+            app:layout_constraintTop_toTopOf="@+id/tv_settings_author" />
+
+        <TextView
+            android:id="@+id/tv_settings_project"
+            style="@style/text_1"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_60"
+            android:background="@drawable/ripple_bg"
+            android:gravity="center_vertical"
+            android:paddingLeft="@dimen/padding"
+            android:paddingRight="@dimen/padding"
+            android:text="@string/code_source"
+            app:drawableRightCompat="@mipmap/arrow_right"
+            app:layout_constraintTop_toBottomOf="@+id/tv_settings_author" />
+
+        <TextView
+            android:id="@+id/tv_settings_copyright"
+            style="@style/text_1"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_60"
+            android:background="@drawable/ripple_bg"
+            android:gravity="center_vertical"
+            android:paddingLeft="@dimen/padding"
+            android:paddingRight="@dimen/padding"
+            android:text="@string/copyright"
+            app:drawableRightCompat="@mipmap/arrow_right"
+            app:layout_constraintTop_toBottomOf="@+id/tv_settings_project" />
+
+        <TextView
+            android:id="@+id/tv_settings_logout"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_50"
+            android:layout_marginTop="8dp"
+            android:background="@drawable/ripple_bg"
+            android:gravity="center"
+            android:text="@string/exitLogin"
+            android:textColor="@color/red"
+            android:textSize="@dimen/text_1"
+            app:layout_constraintTop_toBottomOf="@+id/tv_settings_copyright" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</layout>

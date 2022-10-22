@@ -1,4 +1,4 @@
-package com.zziafyc.wanandroid_jetpack.ui.home
+package com.zziafyc.wanandroid_jetpack.ui.main.home
 
 import com.zziafyc.base_library.base.BaseRepository
 import com.zziafyc.wanandroid_jetpack.bean.ArticleBean

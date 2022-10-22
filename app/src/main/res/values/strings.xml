@@ -15,4 +15,29 @@
     <string name="share_information_3">其他个人站点会进入审核阶段，不要投递任何无效链接，测试的请尽快删除，否则可能会对你的账号产生一定影响;</string>
     <string name="share_information_4">目前处于测试阶段，如果你发现500等错误，可以向我提交日志，让我们一起使网站变得更好。</string>
     <string name="share_information_5">由于本站只有我一个人开发与维护，会尽力保证24小时内审核，当然有可能哪天太累，会延期，请保持佛系...</string>
+    <!--    我的模块-->
+    <string name="settings">设置</string>
+    <string name="rank">排名</string>
+    <string name="myIntegral">我的积分</string>
+    <string name="currentIntegral">当前积分:</string>
+    <string name="myCollection">我的收藏</string>
+    <string name="myArticle">我的文章</string>
+    <string name="netSite">网站</string>
+    <string name="nightMode">夜间模式</string>
+    <string name="clearCache">清除缓存</string>
+    <string name="version">版本</string>
+    <string name="version_value">1.0.0</string>
+    <string name="author">作者</string>
+    <string name="author_name">zziafyc</string>
+    <string name="code_source">项目源码</string>
+    <string name="copyright">版权声明</string>
+
+    <string name="exitLogin">退出登录</string>
+    <string name="login_first_please">请先登录</string>
+    <string name="prompt">提示语</string>
+    <string name="sure">确认</string>
+    <string name="cancel">取消</string>
+    <string name="isLoading">正在加载</string>
+    <string name="makeSure_logout">确定要退出登录吗？</string>
+    <string name="have_logout">已退出登录</string>
 </resources>

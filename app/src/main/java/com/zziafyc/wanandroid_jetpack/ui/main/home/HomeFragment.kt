@@ -1,6 +1,5 @@
-package com.zziafyc.wanandroid_jetpack.ui.home
+package com.zziafyc.wanandroid_jetpack.ui.main.home
 
-import android.os.Bundle
 import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.SimpleItemAnimator
@@ -10,7 +9,6 @@ import com.zziafyc.base_library.common.extend.smartDismiss
 import com.zziafyc.wanandroid_jetpack.R
 import com.zziafyc.wanandroid_jetpack.adapter.ArticleAdapter
 import com.zziafyc.wanandroid_jetpack.databinding.FragmentHomeBinding
-import com.zziafyc.wanandroid_jetpack.utils.CacheUtil
 import com.zziafyc.wanandroid_jetpack.viewholder.BannerViewHolder
 
 /**

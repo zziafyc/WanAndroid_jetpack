@@ -6,7 +6,7 @@ import android.content.Intent
 import com.zziafyc.base_library.constants.Constants
 import com.zziafyc.base_library.event.NetworkChangeEvent
 import com.zziafyc.base_library.utils.NetWorkUtils
-import com.zziafyc.base_library.utils.PreferenceUtils
+import com.zziafyc.base_library.utils.SharePreferenceUtils
 import org.greenrobot.eventbus.EventBus
 
 /**
@@ -16,7 +16,7 @@ import org.greenrobot.eventbus.EventBus
  * @description 网络判断
  */
 class NetworkChangeReceiver : BroadcastReceiver() {
-    private var hasNetwork: Boolean = PreferenceUtils.getBoolean(
+    private var hasNetwork: Boolean = SharePreferenceUtils.getBoolean(
         Constants.HAS_NETWORK_KEY,
         true
     )
